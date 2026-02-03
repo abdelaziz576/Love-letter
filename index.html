@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>رسالة حب</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Cairo", sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.envelope {
+    width: 120px;
+    height: 80px;
+    background: pink;
+    margin: auto;
+    position: relative;
+    border-radius: 6px;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 40px solid #ffb6c1;
+}
+
+.click-text {
+    margin-top: 10px;
+    color: #e75480;
+    font-size: 18px;
+}
+
+.hidden {
+    display: none;
+}
+
+.bears {
+    margin-top: 20px;
+    font-size: 80px;
+    animation: fadeIn 1s forwards;
+}
+
+.kiss {
+    animation: kiss 1s infinite;
+}
+
+.text-love {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #e75480;
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes kiss {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div id="envelopeBox">
+        <div class="envelope" onclick="openLove()"></div>
+        <div class="click-text">اضغط عليّ 💌</div>
+    </div>
+
+    <div id="loveBox" class="hidden">
+        <div class="bears">
+            🐻 <span class="kiss">💋</span> 🧸
+        </div>
+        <div class="text-love">
+            انتي حبي و زوجتي 💖
+        </div>
+    </div>
+</div>
+
+<script>
+function openLove() {
+    document.getElementById("envelopeBox").style.display = "none";
+    document.getElementById("loveBox").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
